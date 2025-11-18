@@ -36,7 +36,7 @@ fun ScreenC(onNext: () -> Unit) {
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
             Text(
-                text = "ВЕРНУТЬСЯ К A",
+                text = "ПЕРЕЙТИ К A",
                 color = Color.White,
                 modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp)
             )

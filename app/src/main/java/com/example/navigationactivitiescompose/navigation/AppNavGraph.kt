@@ -26,19 +26,24 @@ fun AppNavGraph(navController: NavHostController = rememberNavController()) {
 
         composable(Routes.A) {
             Log.d("NAV", "Opened screen A")
-            ScreenA(onNext = { navController.navigate(Routes.B) })
+            ScreenA(onNext = {
+                Log.d("NAV", "A → B")
+                navController.navigate(Routes.B) })
         }
 
         composable(Routes.B) {
             Log.d("NAV", "Opened screen B")
-            ScreenB(onNext = { navController.navigate(Routes.C) })
+            ScreenB(onNext = {
+                Log.d("NAV", "B → C")
+                navController.navigate(Routes.C) })
         }
 
         composable(Routes.C) {
             Log.d("NAV", "Opened screen C")
             ScreenC(onNext = {
+                Log.d("NAV", "C → A")
                 navController.navigate(Routes.A) {
-                    popUpTo(Routes.A) { inclusive = true }
+                    popUpTo(0)
                 }
             })
         }
